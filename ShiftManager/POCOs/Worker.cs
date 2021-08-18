@@ -18,19 +18,16 @@ namespace ShiftManager.POCOs
 
         }
 
-        public Worker(string name, List<Qualification> qualifications, List<Shift> shifts)
+        public Worker (string name) : this()
         {
             this.Name = name;
-            this.ListOfWorkerQualifications = qualifications;
-            this.ListOfWeeklyShifts = shifts;
         }
 
-        public Worker(int id, string name, List<Qualification> qualifications)
+        public Worker(string name, int id = 0) : this(name)
         {
             this.Id = id;
-            this.Name = name;
-            this.ListOfWorkerQualifications = qualifications;
         }
+                   
 
         internal Worker GetWorker()
         {

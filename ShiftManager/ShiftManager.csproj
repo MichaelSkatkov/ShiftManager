@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,24 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOs\DAOMethods.cs" />
     <Compile Include="DAOs\IBasicDAO.cs" />
     <Compile Include="DAOs\IQualificationDAO.cs" />
     <Compile Include="DAOs\IShiftDAO.cs" />
-    <Compile Include="DAOs\ITimeSlotDAO.cs" />
     <Compile Include="DAOs\IWorkerDAO.cs" />
     <Compile Include="DAOs\MSSQL\QualificationDAO.cs" />
     <Compile Include="DAOs\MSSQL\ShiftDAO.cs" />
-    <Compile Include="DAOs\MSSQL\TimeSlotDAO.cs" />
     <Compile Include="DAOs\MSSQL\WorkerDAO.cs" />
     <Compile Include="POCOs\IPOCO.cs" />
     <Compile Include="POCOs\Qualification.cs" />
     <Compile Include="POCOs\Shift.cs" />
-    <Compile Include="POCOs\TimeSlot.cs" />
     <Compile Include="POCOs\Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

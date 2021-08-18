@@ -8,6 +8,5 @@ namespace ShiftManager.DAOs
 {
     interface IWorkerDAO : IBasicDAO<POCOs.Worker>
     {
-        IList<POCOs.Qualification> GetQualifications(int id);
     }
 }

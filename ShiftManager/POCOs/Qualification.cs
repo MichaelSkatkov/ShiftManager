@@ -15,15 +15,14 @@ namespace ShiftManager.POCOs
 
         }
 
-        public Qualification( string name)
+        public Qualification(string name) : this()
         {
             Name = name;
         }
 
-        public Qualification(string name, int id)
+        public Qualification(string name, int id = 0) : this(name)
         {
             Id = id;
-            Name = name;
         }
 
         internal Qualification GetQualification()
