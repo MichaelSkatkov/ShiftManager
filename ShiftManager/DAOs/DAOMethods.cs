@@ -36,5 +36,14 @@ namespace ShiftManager.DAOs
             sqlParameter.ParameterName = parameterName;
             return sqlParameter;
         }
+
+        static internal SqlParameter SqlParameterGeneratorTimeSpan(TimeSpan time, string parameterName)
+        {
+            SqlParameter sqlParameter = new SqlParameter();
+            sqlParameter.SqlDbType = SqlDbType.Time;
+            sqlParameter.SqlValue = time;
+            sqlParameter.ParameterName = parameterName;
+            return sqlParameter;
+        }
     }
 }

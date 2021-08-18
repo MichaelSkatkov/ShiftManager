@@ -50,9 +50,15 @@
     <Compile Include="DAOs\MSSQL\QualificationDAO.cs" />
     <Compile Include="DAOs\MSSQL\ShiftDAO.cs" />
     <Compile Include="DAOs\MSSQL\WorkerDAO.cs" />
+    <Compile Include="Facades\FacadeBase.cs" />
+    <Compile Include="Facades\IQualificationFacade.cs" />
+    <Compile Include="Facades\IShiftFacade.cs" />
+    <Compile Include="Facades\IworkdayFacade.cs" />
+    <Compile Include="Facades\IWorkerFacade.cs" />
     <Compile Include="POCOs\IPOCO.cs" />
     <Compile Include="POCOs\Qualification.cs" />
     <Compile Include="POCOs\Shift.cs" />
+    <Compile Include="POCOs\Workday.cs" />
     <Compile Include="POCOs\Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
