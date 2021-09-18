@@ -35,7 +35,9 @@ namespace ShiftManager.DAOs.MSSQL
 
         public Shift Get(int id)
         {
+           
             Shift shift = new Shift();
+
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MSSQLConnectionString"].ConnectionString))
             {
                 SqlCommand sqlCommand = DAOMethods.SqlCommandGenerator(connection, "GET_SHIFT_BY_ID");
@@ -46,16 +48,42 @@ namespace ShiftManager.DAOs.MSSQL
 
                 connection.Open();
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
+                while (sqlDataReader.Read() == true)
+                {
+                    shift = new Shift((int)sqlDataReader["REQ"],
+                                      (TimeSpan)sqlDataReader["START"],
+                                      (TimeSpan)sqlDataReader["END"],
+                                      (DayOfWeek)sqlDataReader["DAY"],
+                                      (int)sqlDataReader["ID"]);
+                }
+                connection.Close();
             }
+            return shift;
         }
 
         public IList<Shift> GetAll()
         {
+            List<Shift> shifts = new List<Shift>();
+
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MSSQLConnectionString"].ConnectionString))
             {
-                throw new NotImplementedException();
+                SqlCommand sqlCommand = DAOMethods.SqlCommandGenerator(connection, "GET_ALL_SHIFTS");
+
+                connection.Open();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read() == true)
+                {
+                    Shift shift = new Shift((int)sqlDataReader["REQ"],
+                                      (TimeSpan)sqlDataReader["START"],
+                                      (TimeSpan)sqlDataReader["END"],
+                                      (DayOfWeek)sqlDataReader["DAY"],
+                                      (int)sqlDataReader["ID"]);
+                    shifts.Add(shift);
+                }
+                connection.Close();
             }
+
+            return shifts;
         }
 
         public void Remove(Shift t)

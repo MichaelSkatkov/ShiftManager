@@ -24,25 +24,5 @@ namespace ShiftManager.POCOs
         {
             Id = id;
         }
-
-        internal Qualification GetQualification()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void AddQualification(Qualification qualification)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void EditQualification(Qualification qualification)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void DeleteQualification(Qualification qualification)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

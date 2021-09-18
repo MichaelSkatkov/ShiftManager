@@ -12,6 +12,7 @@ namespace ShiftManager.POCOs
         internal string Name { get; set; }
         internal List<Qualification> ListOfWorkerQualifications { get; set; }
         internal List<Shift> ListOfWeeklyShifts { get; set; }
+        internal Dictionary<DayOfWeek, WorkHours> WorkHoursByDay;
 
         public Worker()
         {
@@ -26,27 +27,6 @@ namespace ShiftManager.POCOs
         public Worker(string name, int id = 0) : this(name)
         {
             this.Id = id;
-        }
-                   
-
-        internal Worker GetWorker()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void AddWorker(Worker worker)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void EditWorker(Worker worker)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void DeleteWorker(Worker worker)
-        {
-            throw new NotImplementedException();
         }
     }
 }

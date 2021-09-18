@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShiftManager.Facades
+namespace ShiftManager.DAOs.Methods
 {
-    interface IworkdayFacade
+    interface IWorkdayMethod 
     {
     }
 }

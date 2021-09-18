@@ -9,7 +9,8 @@ namespace ShiftManager.POCOs
 {
     internal class Shift :IPOCO
     {
-        internal int id { get; set; }
+        internal int id { get; }
+        internal int qualificationId { get; set; }
         internal Qualification requiredQualification { get; set; }
         internal TimeSpan shiftStart { get; set; } = new TimeSpan(0, 0, 1);
         internal TimeSpan shiftEnd { get; set; } = new TimeSpan(0, 0, 2);
@@ -19,18 +20,18 @@ namespace ShiftManager.POCOs
         {
 
         }
-        public Shift(Qualification qualification, int id = 0) : this()
+        public Shift(int qualificationId, int id = 0) : this()
         {
-            this.requiredQualification = qualification;
+            this.qualificationId = qualificationId;
             this.id = id;
         }
 
-        public Shift(Qualification qualification, DayOfWeek day, int id = 0) : this (qualification,id)
+        public Shift(int qualificationId, DayOfWeek day, int id = 0) : this (qualificationId, id)
         {
             this.dayOfWeek = day;
         }
 
-        public Shift(Qualification qualification, TimeSpan start, TimeSpan end, DayOfWeek day, int id = 0) : this (qualification, day, id)
+        public Shift(int qualificationId, TimeSpan start, TimeSpan end, DayOfWeek day, int id = 0) : this (qualificationId, day, id)
         {
             this.shiftStart = start;
             this.shiftEnd = end;

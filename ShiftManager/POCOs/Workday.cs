@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShiftManager.POCOs
 {
-    interface Workday : IPOCO
+    class Workday : IPOCO
     {
     }
 }
